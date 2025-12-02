@@ -43,9 +43,26 @@ for the_range in ranges:
         for id_num in range(start_id, end_id + 1):
             id_str = str(id_num)
             length = len(id_str)
-            if length % 2 == 0:
-                half = length // 2
-                if id_str[:half] == id_str[half:]:
-                    print(f">>> Invalid ID: {id_num}")
-                    invalid_total += id_num
+            is_invalid = False
+            # Check every number the length could be evenly divisible by
+            for i in range(1, length // 2 + 1):
+                # Check if evenly divisible
+                if length % i == 0:
+                    # Loop through all of the possible split points,
+                    # to see if all segments are the same,
+                    # always comparing against the first segment
+                    start_split = i
+                    while start_split + i <= length:
+                        if id_str[:i] == id_str[start_split : start_split + i]:
+                            is_invalid = True
+                            start_split += i
+                        else:
+                            is_invalid = False
+                            break
+                    if is_invalid:
+                        print(f">>> Invalid ID: {id_num}")
+                        invalid_total += id_num
+                        # We don't need to check any more, because at least one
+                        # pattern detected
+                        break
 print(f"Total of all invalid IDs: {invalid_total}")
