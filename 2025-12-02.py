@@ -58,6 +58,7 @@ for the_range in ranges:
                             start_split += i
                         else:
                             is_invalid = False
+                            # This pattern failed
                             break
                     if is_invalid:
                         print(f">>> Invalid ID: {id_num}")
