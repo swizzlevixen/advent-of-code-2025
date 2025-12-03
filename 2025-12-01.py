@@ -75,7 +75,5 @@ for line in lines:
         print(f"New position: {dial_position}")
     else:
         print(f"Invalid line format: {line.strip()}")
-    # if dial_position == 0:
-    #     zero_count += 1
 
 print(f"Total zero hits: {zero_count}")
