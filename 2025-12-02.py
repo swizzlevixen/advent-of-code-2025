@@ -1,4 +1,4 @@
-# Puzzle solution for https://adventofcode.com/2025/day/1
+# Puzzle solution for https://adventofcode.com/2025/day/2
 # The ranges are separated by commas (,); each range gives its
 # first ID and last ID separated by a dash (-).
 #
