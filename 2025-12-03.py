@@ -30,7 +30,7 @@ with open(args.filename, "r") as file:
     lines = file.readlines()
 
 # Algorithm plan:
-# - Look for the largest number in places 0 to length - 1
+# - Look for the largest number in places 0 to length - batteries left
 # - Keep the location of the largest number, ignore duplicates to the right
 # - look for next largest number to the right of the first number
 # - put them together and report the integer
