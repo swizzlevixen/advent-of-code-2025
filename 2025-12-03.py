@@ -37,7 +37,7 @@ with open(args.filename, "r") as file:
 # - sum all "joltages" and report the answer
 
 total_joltage = 0  # Sum of joltage
-batteries_allowed = 2  # Number of batteries that we are allowed to use
+batteries_allowed = 12  # Number of batteries that we are allowed to use
 
 for line in lines:
     line = line.strip()
@@ -47,12 +47,14 @@ for line in lines:
         jolt_val.append(0)
         jolt_loc.append(0)
         if batt == 0:
-            for i in range(0, len(line) - 1):
+            for i in range(0, len(line) - (batteries_allowed - 1)):
                 if int(line[i]) > jolt_val[batt]:
                     jolt_val[batt] = int(line[i])
                     jolt_loc[batt] = i
         else:
-            for i in range(jolt_loc[batt - 1] + 1, len(line)):
+            for i in range(
+                jolt_loc[batt - 1] + 1, len(line) - (batteries_allowed - batt - 1)
+            ):
                 if int(line[i]) > jolt_val[batt]:
                     jolt_val[batt] = int(line[i])
                     jolt_loc[batt] = i
