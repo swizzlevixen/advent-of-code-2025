@@ -15,12 +15,10 @@ import argparse
 # Get the input filename from command line arguments
 
 parser = argparse.ArgumentParser(
-    prog="2025-12-01 Decode", description="Find the door password."
+    prog="Advent Solver!", description="Find the Advent of Code solution for today."
 )
 
-parser.add_argument(
-    "filename", type=str, help="Input file containing the safe rotations."
-)
+parser.add_argument("filename", type=str, help="Input file with data.")
 
 args = parser.parse_args()
 
