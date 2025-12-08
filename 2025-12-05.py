@@ -77,6 +77,7 @@ while ranges_count != len(ranges):
                 j_max = ranges[j][-1]
                 if max(i_min, j_min) - min(i_max, j_max) <= 0:
                     # Then they overlap
+                    # Method inspired via https://stackoverflow.com/a/39452639/429070
                     i_min = min(i_min, j_min)
                     i_max = max(i_max, j_max)
                     overlap = True
