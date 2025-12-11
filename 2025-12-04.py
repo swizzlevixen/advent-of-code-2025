@@ -1,4 +1,4 @@
-# Puzzle solution for https://adventofcode.com/2025/day/3
+# Puzzle solution for https://adventofcode.com/2025/day/4
 #
 # The rolls of paper (@) are arranged on a large grid; the input is the diagram
 # The forklifts can only access a roll of paper if there are fewer than
